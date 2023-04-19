@@ -1,3 +1,4 @@
+import dayjs from 'dayjs'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
@@ -20,10 +21,10 @@ const ContactCard = ({ details }: { details: Contact }) => {
         <CardHeader>
           <StyledAvatar alt={name} src={avatar} />
           <Box>
-            <Typography sx={{ fontSize: 12 }} color="text.secondary" gutterBottom>
-              #{id} - Last update on: {createdAt}
+            <Typography sx={{ fontSize: 12, mb: 0 }} color="text.secondary" gutterBottom>
+              #{id} - Last updated on: {dayjs(createdAt).format('DD MMM YYYY')}
             </Typography>
-            <Typography variant="h6" component="div">
+            <Typography variant="h5" component="div">
               {name}
             </Typography>
           </Box>
@@ -36,7 +37,7 @@ const ContactCard = ({ details }: { details: Contact }) => {
             <b>📞 Phone:</b> {phone}
           </Typography>
           <Typography component="p">
-            <b>🎉 DOB:</b> {birthday}
+            <b>🎉 DOB:</b> {dayjs(birthday).format('DD MMM YYYY')}
           </Typography>
         </Box>
       </CardContent>
