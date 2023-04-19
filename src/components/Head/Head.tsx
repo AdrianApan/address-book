@@ -1,12 +1,11 @@
 import { default as NextHead } from 'next/head'
 
+import { DEFAULT_TITLE, DEFAULT_DESCRIPTION } from 'src/utils/consts'
+
 interface Props {
   title?: string
   description?: string
 }
-
-const DEFAULT_TITLE = 'Address book'
-const DEFAULT_DESCRIPTION = 'An address book app built with Next JS'
 
 const Head = ({ title, description }: Props) => {
   return (
