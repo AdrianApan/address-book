@@ -1,9 +1,11 @@
 import Button from '@mui/material/Button'
 import Grid from '@mui/material/Grid'
 
+import { DEFAULT_ERROR_MESSAGE } from 'src/utils/consts'
+
+import ContactCard from '../ContactCard'
 import useGetContacts from 'src/hooks/useGetContacts'
 import useAddContact from 'src/hooks/useAddContact'
-import ContactCard from '../ContactCard'
 
 const ContactsList = () => {
   const { data: allContacts, isLoading, error } = useGetContacts()
@@ -14,7 +16,7 @@ const ContactsList = () => {
   }
 
   if (error) {
-    return <>{error?.message}</>
+    return <>{error?.message || DEFAULT_ERROR_MESSAGE}</>
   }
 
   const contactData = { name: 'xyz' }
