@@ -1,14 +1,5 @@
-import axios from 'axios'
-
 import { Contact } from 'src/types/Contact'
-import { API_BASE_URL } from 'src/utils/consts'
-
-const apiClient = axios.create({
-  baseURL: API_BASE_URL,
-  headers: {
-    'Content-type': 'application/json',
-  },
-})
+import { apiClient } from 'src/utils/apiClient'
 
 export const getContacts = async () => {
   const response = await apiClient.get<Contact[]>('/api/v1/contacts')
