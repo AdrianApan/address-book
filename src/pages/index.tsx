@@ -1,4 +1,4 @@
-import Box from '@mui/material/Box'
+import ContactsList from 'src/components/ContactsList/ContactsList'
 
 import Head from 'src/components/Head'
 import Layout from 'src/layouts/default'
@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <Head />
       <Layout>
-        <Box sx={{ padding: 2 }}>Lorem ipsum...</Box>
+        <ContactsList />
       </Layout>
     </>
   )
