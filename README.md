@@ -48,4 +48,5 @@ pnpm dev
 
 - Add pagination
 - Replace random contact details functionality with user inputted contact data
+- Add validation to the edit contact details form
 - Allow user avatar uploads
