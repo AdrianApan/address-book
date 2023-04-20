@@ -1,6 +1,4 @@
-import InputBase from '@mui/material/InputBase'
-import IconButton from '@mui/material/IconButton'
-import Divider from '@mui/material/Divider'
+import { InputBase, IconButton, Divider } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 
 import { StyledCard } from './Search.styles'

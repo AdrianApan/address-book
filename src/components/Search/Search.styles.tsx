@@ -1,5 +1,5 @@
 import { styled } from '@mui/system'
-import Card from '@mui/material/Card'
+import { Card } from '@mui/material'
 
 const StyledCard = styled(Card)({
   padding: 8,

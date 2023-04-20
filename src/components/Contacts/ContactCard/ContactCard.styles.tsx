@@ -1,5 +1,5 @@
 import { styled } from '@mui/system'
-import Avatar from '@mui/material/Avatar'
+import { Avatar } from '@mui/material'
 
 const CardHeader = styled('div')({
   display: 'flex',

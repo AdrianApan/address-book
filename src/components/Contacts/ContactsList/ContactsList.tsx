@@ -1,7 +1,4 @@
-import Grid from '@mui/material/Grid'
-import Alert from '@mui/material/Alert'
-import AlertTitle from '@mui/material/AlertTitle'
-import Skeleton from '@mui/material/Skeleton'
+import { Grid, Alert, AlertTitle, Skeleton } from '@mui/material'
 
 import { DEFAULT_ERROR_MESSAGE } from 'src/utils/consts'
 

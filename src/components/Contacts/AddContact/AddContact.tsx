@@ -1,7 +1,6 @@
 import dayjs from 'dayjs'
-import Button from '@mui/material/Button'
+import { Button, CircularProgress } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add'
-import CircularProgress from '@mui/material/CircularProgress'
 
 import useAddContact from 'src/hooks/useAddContact'
 

@@ -1,5 +1,5 @@
 import { styled } from '@mui/system'
-import FormControl from '@mui/material/FormControl'
+import { FormControl } from '@mui/material'
 
 const StyledFormControl = styled(FormControl)({
   '.MuiInputBase-root': {

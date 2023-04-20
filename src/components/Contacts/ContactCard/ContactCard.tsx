@@ -1,14 +1,14 @@
 import dayjs from 'dayjs'
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import CardActions from '@mui/material/CardActions'
-import CircularProgress from '@mui/material/CircularProgress'
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined'
-import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined'
-import CakeOutlinedIcon from '@mui/icons-material/CakeOutlined'
+import {
+  Box,
+  Typography,
+  Button,
+  Card,
+  CardContent,
+  CardActions,
+  CircularProgress,
+} from '@mui/material'
+import { EmailOutlined, PhoneOutlined, CakeOutlined } from '@mui/icons-material'
 
 import { Contact } from 'src/types/Contact'
 import { EMPTY_PLACEHOLDER } from 'src/utils/consts'
@@ -42,15 +42,15 @@ const ContactCard = ({ details }: { details: Contact }) => {
           </CardHeader>
           <Box sx={{ mt: 2 }}>
             <Typography component="p" display="flex" alignItems="center" marginBottom={1}>
-              <EmailOutlinedIcon sx={{ mr: 0.5 }} />
+              <EmailOutlined sx={{ mr: 0.5 }} />
               {email || EMPTY_PLACEHOLDER}
             </Typography>
             <Typography component="p" display="flex" alignItems="center" marginBottom={1}>
-              <PhoneOutlinedIcon sx={{ mr: 0.5 }} />
+              <PhoneOutlined sx={{ mr: 0.5 }} />
               {phone || EMPTY_PLACEHOLDER}
             </Typography>
             <Typography component="p" display="flex" alignItems="center" marginBottom={1}>
-              <CakeOutlinedIcon sx={{ mr: 0.5 }} />
+              <CakeOutlined sx={{ mr: 0.5 }} />
               {birthday ? dayjs(birthday).format('DD MMM YYYY') : EMPTY_PLACEHOLDER}
             </Typography>
           </Box>
