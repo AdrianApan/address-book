@@ -32,8 +32,8 @@ const ContactCard = ({ details }: { details: Contact }) => {
             <StyledAvatar alt={name} src={avatar} />
             <Box>
               <Typography sx={{ fontSize: 12, mb: 0 }} color="text.secondary" gutterBottom>
-                #{id} - Last updated on:{' '}
-                {createdAt ? dayjs(createdAt).format('DD MMM YYYY') : EMPTY_PLACEHOLDER}
+                #{id} - Added on{' '}
+                {createdAt ? dayjs(createdAt).format('DD MMM YYYY, HH:mm:ss') : EMPTY_PLACEHOLDER}
               </Typography>
               <Typography variant="h5" component="div">
                 {name || EMPTY_PLACEHOLDER}
