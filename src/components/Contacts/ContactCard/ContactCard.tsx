@@ -2,13 +2,22 @@ import dayjs from 'dayjs'
 import {
   Box,
   Typography,
-  Button,
   Card,
   CardContent,
   CardActions,
-  CircularProgress,
+  Collapse,
+  IconButton,
+  IconButtonProps,
+  styled,
 } from '@mui/material'
-import { EmailOutlined, PhoneOutlined, CakeOutlined } from '@mui/icons-material'
+import {
+  EmailOutlined,
+  PhoneOutlined,
+  CakeOutlined,
+  ExpandMore as ExpandMoreIcon,
+  ModeEdit,
+  Delete,
+} from '@mui/icons-material'
 
 import { Contact } from 'src/types/Contact'
 import { EMPTY_PLACEHOLDER } from 'src/utils/consts'
@@ -18,11 +27,26 @@ import { EditContactModal } from 'src/components/Contacts'
 import useDeleteContact from 'src/hooks/useDeleteContact'
 import useContactCard from './useContactCard'
 
+interface ExpandMoreProps extends IconButtonProps {
+  expand: boolean
+}
+
+const ExpandMore = styled((props: ExpandMoreProps) => {
+  const { expand, ...other } = props
+  return <IconButton {...other} />
+})(({ theme, expand }) => ({
+  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+  marginLeft: 'auto',
+  transition: theme.transitions.create('transform', {
+    duration: theme.transitions.duration.shortest,
+  }),
+}))
+
 const ContactCard = ({ details }: { details: Contact }) => {
   const { id, name, avatar, email, phone, birthday, createdAt } = details
   const deleteContact = useDeleteContact()
-  const { isLoading } = deleteContact
-  const { isModalVisible, setIsModalVisible, handleClose } = useContactCard()
+  const { isModalVisible, setIsModalVisible, handleClose, expanded, handleExpandClick } =
+    useContactCard()
 
   return (
     <>
@@ -40,39 +64,41 @@ const ContactCard = ({ details }: { details: Contact }) => {
               </Typography>
             </Box>
           </CardHeader>
-          <Box sx={{ mt: 2 }}>
-            <Typography component="p" display="flex" alignItems="center" marginBottom={1}>
-              <EmailOutlined sx={{ mr: 0.5 }} />
-              {email || EMPTY_PLACEHOLDER}
-            </Typography>
-            <Typography component="p" display="flex" alignItems="center" marginBottom={1}>
-              <PhoneOutlined sx={{ mr: 0.5 }} />
-              {phone || EMPTY_PLACEHOLDER}
-            </Typography>
-            <Typography component="p" display="flex" alignItems="center" marginBottom={1}>
-              <CakeOutlined sx={{ mr: 0.5 }} />
-              {birthday ? dayjs(birthday).format('DD MMM YYYY') : EMPTY_PLACEHOLDER}
-            </Typography>
-          </Box>
         </CardContent>
 
-        <CardActions>
-          <Button size="small" variant="outlined" onClick={() => setIsModalVisible(true)}>
-            Edit
-          </Button>
-          <Button
-            size="small"
-            color="error"
-            onClick={() => deleteContact.mutate({ id })}
-            disabled={isLoading}
-            {...(isLoading && {
-              variant: 'contained',
-              startIcon: <CircularProgress size={16} color="primary" />,
-            })}
+        <CardActions disableSpacing>
+          <IconButton aria-label="edit" onClick={() => setIsModalVisible(true)}>
+            <ModeEdit />
+          </IconButton>
+          <IconButton aria-label="delete" onClick={() => deleteContact.mutate({ id })}>
+            <Delete />
+          </IconButton>
+          <ExpandMore
+            expand={expanded}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
           >
-            Delete
-          </Button>
+            <ExpandMoreIcon />
+          </ExpandMore>
         </CardActions>
+
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography component="p" display="flex" alignItems="center" marginBottom={1.5}>
+              <EmailOutlined sx={{ mr: 1 }} />
+              {email || EMPTY_PLACEHOLDER}
+            </Typography>
+            <Typography component="p" display="flex" alignItems="center" marginBottom={1.5}>
+              <PhoneOutlined sx={{ mr: 1 }} />
+              {phone || EMPTY_PLACEHOLDER}
+            </Typography>
+            <Typography component="p" display="flex" alignItems="center">
+              <CakeOutlined sx={{ mr: 1 }} />
+              {birthday ? dayjs(birthday).format('DD MMM YYYY') : EMPTY_PLACEHOLDER}
+            </Typography>
+          </CardContent>
+        </Collapse>
       </Card>
 
       <EditContactModal
