@@ -2,7 +2,7 @@
 
 ## 🖥️ Demo
 
-https://user-images.githubusercontent.com/69169115/233455501-633f31e0-af69-4dc0-911c-961141fdf726.mp4
+https://user-images.githubusercontent.com/69169115/233476825-3e04518b-20b5-4b0c-a120-7ebd8a62fd17.mp4
 
 ## 📚 Stack
 
