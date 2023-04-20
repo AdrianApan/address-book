@@ -9,13 +9,10 @@ const useGetContacts = () => {
   const { data, isLoading, error } = useQuery<Contact[], AxiosError>({
     queryKey: ['contacts'],
     queryFn: getContacts,
-    // onSuccess: (data) => {
-    //   data?.sort((a, b) => (dayjs(a.createdAt).isAfter(dayjs(b.createdAt)) ? -1 : 1))
-    // },
   })
 
   return {
-    data,
+    data: data?.sort((a, b) => (dayjs(a.createdAt).isAfter(dayjs(b.createdAt)) ? -1 : 1)),
     isLoading,
     error,
   }
