@@ -5,18 +5,14 @@ const useSearch = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const { refetch } = useGetContacts(searchTerm)
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    const data = new FormData(event.currentTarget)
-    const userInput = data.get('search')
-    setSearchTerm(userInput as string)
-  }
-
   useEffect(() => {
-    refetch()
+    const refetchData = setTimeout(() => {
+      refetch()
+    }, 350)
+    return () => clearTimeout(refetchData)
   }, [searchTerm])
 
-  return { handleSubmit }
+  return { setSearchTerm }
 }
 
 export default useSearch

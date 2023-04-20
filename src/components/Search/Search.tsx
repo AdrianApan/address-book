@@ -6,23 +6,20 @@ import { AddContact } from 'src/components/Contacts'
 import useSearch from './useSearch'
 
 const Search = () => {
-  const { handleSubmit } = useSearch()
+  const { setSearchTerm } = useSearch()
 
   return (
-    <form onSubmit={handleSubmit} noValidate autoComplete="off">
-      <StyledCard variant="outlined">
-        <InputBase
-          sx={{ ml: 1, flex: 1 }}
-          placeholder="Search contacts"
-          inputProps={{ 'aria-label': 'search contacts', name: 'search' }}
-        />
-        <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
-          <SearchIcon />
-        </IconButton>
-        <Divider sx={{ height: 28, mx: 2, my: 0.5 }} orientation="vertical" />
-        <AddContact />
-      </StyledCard>
-    </form>
+    <StyledCard variant="outlined">
+      <InputBase
+        sx={{ ml: 1, flex: 1 }}
+        placeholder="Search contacts"
+        inputProps={{ 'aria-label': 'search contacts', name: 'search' }}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        startAdornment={<SearchIcon sx={{ mr: 1 }} />}
+      />
+      <Divider sx={{ height: 28, mx: 2, my: 0.5 }} orientation="vertical" />
+      <AddContact />
+    </StyledCard>
   )
 }
 
