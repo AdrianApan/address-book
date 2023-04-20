@@ -1,5 +1,9 @@
 # Address Book
 
+## 🖥️ Demo
+
+https://user-images.githubusercontent.com/69169115/233455501-633f31e0-af69-4dc0-911c-961141fdf726.mp4
+
 ## 📚 Stack
 
 ```
@@ -11,8 +15,6 @@
 - React Testing Library
 - Cypress
 ```
-
-<hr>
 
 ## 🏃‍♀️ Running the app
 
@@ -41,8 +43,6 @@ pnpm dev
 ```
 
 ### Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
-
-<hr>
 
 ## 🗺️ Roadmap
 
