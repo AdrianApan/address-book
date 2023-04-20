@@ -11,6 +11,7 @@ import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined'
 import CakeOutlinedIcon from '@mui/icons-material/CakeOutlined'
 
 import { Contact } from 'src/types/Contact'
+import { EMPTY_PLACEHOLDER } from 'src/utils/consts'
 
 import { CardHeader, StyledAvatar } from './ContactCard.styles'
 import useDeleteContact from 'src/hooks/useDeleteContact'
@@ -27,25 +28,26 @@ const ContactCard = ({ details }: { details: Contact }) => {
           <StyledAvatar alt={name} src={avatar} />
           <Box>
             <Typography sx={{ fontSize: 12, mb: 0 }} color="text.secondary" gutterBottom>
-              #{id} - Last updated on: {dayjs(createdAt).format('DD MMM YYYY')}
+              #{id} - Last updated on:{' '}
+              {createdAt ? dayjs(createdAt).format('DD MMM YYYY') : EMPTY_PLACEHOLDER}
             </Typography>
             <Typography variant="h5" component="div">
-              {name}
+              {name || EMPTY_PLACEHOLDER}
             </Typography>
           </Box>
         </CardHeader>
         <Box sx={{ mt: 2 }}>
           <Typography component="p" display="flex" alignItems="center" marginBottom={1}>
             <EmailOutlinedIcon sx={{ mr: 0.5 }} />
-            {email}
+            {email || EMPTY_PLACEHOLDER}
           </Typography>
           <Typography component="p" display="flex" alignItems="center" marginBottom={1}>
             <PhoneOutlinedIcon sx={{ mr: 0.5 }} />
-            {phone}
+            {phone || EMPTY_PLACEHOLDER}
           </Typography>
           <Typography component="p" display="flex" alignItems="center" marginBottom={1}>
             <CakeOutlinedIcon sx={{ mr: 0.5 }} />
-            {dayjs(birthday).format('DD MMM YYYY')}
+            {birthday ? dayjs(birthday).format('DD MMM YYYY') : EMPTY_PLACEHOLDER}
           </Typography>
         </Box>
       </CardContent>

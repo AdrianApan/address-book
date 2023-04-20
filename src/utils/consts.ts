@@ -4,3 +4,5 @@ export const DEFAULT_TITLE = 'Address book'
 export const DEFAULT_DESCRIPTION = 'An address book app built with Next JS'
 
 export const DEFAULT_ERROR_MESSAGE = 'Something went wrong, please try again!'
+
+export const EMPTY_PLACEHOLDER = '-'
