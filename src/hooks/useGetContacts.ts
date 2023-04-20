@@ -1,3 +1,4 @@
+import dayjs from 'dayjs'
 import { AxiosError } from 'axios'
 import { useQuery } from '@tanstack/react-query'
 
@@ -8,6 +9,9 @@ const useGetContacts = () => {
   const { data, isLoading, error } = useQuery<Contact[], AxiosError>({
     queryKey: ['contacts'],
     queryFn: getContacts,
+    // onSuccess: (data) => {
+    //   data?.sort((a, b) => (dayjs(a.createdAt).isAfter(dayjs(b.createdAt)) ? -1 : 1))
+    // },
   })
 
   return {
