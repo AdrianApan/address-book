@@ -1,3 +1,4 @@
+import dayjs from 'dayjs'
 import { Dialog, DialogTitle, DialogContent, DialogActions, Input, Button } from '@mui/material/'
 import { PersonOutlined, EmailOutlined, PhoneOutlined, CakeOutlined } from '@mui/icons-material'
 
@@ -72,7 +73,7 @@ const EditContactModal = ({ isModalVisible, handleClose, contactDetails }: Props
             <Input
               placeholder="Date of birth (DD/MM/YYY)"
               id="dob"
-              defaultValue={birthday}
+              defaultValue={dayjs(birthday).format('DD MMM YYYY')}
               disableUnderline
               startAdornment={<CakeOutlined />}
               inputProps={{
