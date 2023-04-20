@@ -5,6 +5,9 @@ import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined'
+import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined'
+import CakeOutlinedIcon from '@mui/icons-material/CakeOutlined'
 
 import { Contact } from 'src/types/Contact'
 
@@ -30,14 +33,17 @@ const ContactCard = ({ details }: { details: Contact }) => {
           </Box>
         </CardHeader>
         <Box sx={{ mt: 2 }}>
-          <Typography component="p">
-            <b>✉️ Email:</b> {email}
+          <Typography component="p" display="flex" alignItems="center" marginBottom={1}>
+            <EmailOutlinedIcon sx={{ mr: 0.5 }} />
+            {email}
           </Typography>
-          <Typography component="p">
-            <b>📞 Phone:</b> {phone}
+          <Typography component="p" display="flex" alignItems="center" marginBottom={1}>
+            <PhoneOutlinedIcon sx={{ mr: 0.5 }} />
+            {phone}
           </Typography>
-          <Typography component="p">
-            <b>🎉 DOB:</b> {dayjs(birthday).format('DD MMM YYYY')}
+          <Typography component="p" display="flex" alignItems="center" marginBottom={1}>
+            <CakeOutlinedIcon sx={{ mr: 0.5 }} />
+            {dayjs(birthday).format('DD MMM YYYY')}
           </Typography>
         </Box>
       </CardContent>
