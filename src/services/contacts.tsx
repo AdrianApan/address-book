@@ -1,8 +1,8 @@
 import { Contact } from 'src/types/Contact'
 import { apiClient } from 'src/utils/apiClient'
 
-export const getContacts = async () => {
-  const response = await apiClient.get<Contact[]>('/api/v1/contacts')
+export const getContacts = async (search: string) => {
+  const response = await apiClient.get<Contact[]>(`/api/v1/contacts?search=${search}`)
   return response.data
 }
 
