@@ -4,6 +4,7 @@
 
 ```
 - React
+- React Query
 - NextJS
 - Typescript
 - Jest
@@ -11,10 +12,12 @@
 - Cypress
 ```
 
+<hr>
+
 ## 🏃‍♀️ Running the app
 
 ```
-ℹ️ Node v19.9.0 is recommended
+ℹ️ Node v19.9.0 is recommended to run the app.
 ```
 
 ### Installing dependecies:
@@ -38,3 +41,11 @@ pnpm dev
 ```
 
 ### Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
+
+<hr>
+
+## 🗺️ Roadmap
+
+- Add pagination
+- Replace random contact details functionality with user inputted contact data
+- Allow user avatar uploads
