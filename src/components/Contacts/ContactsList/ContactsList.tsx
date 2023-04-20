@@ -6,7 +6,7 @@ import Skeleton from '@mui/material/Skeleton'
 import { DEFAULT_ERROR_MESSAGE } from 'src/utils/consts'
 
 import Search from 'src/components/Search'
-import ContactCard from 'src/components/ContactCard'
+import { ContactCard } from 'src/components/Contacts'
 import useGetContacts from 'src/hooks/useGetContacts'
 
 const ContactsList = () => {

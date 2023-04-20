@@ -5,7 +5,7 @@ import Divider from '@mui/material/Divider'
 import SearchIcon from '@mui/icons-material/Search'
 
 import { StyledCard } from './Search.styles'
-import AddContact from 'src/components/AddContact'
+import { AddContact } from 'src/components/Contacts'
 
 const Search = () => {
   return (

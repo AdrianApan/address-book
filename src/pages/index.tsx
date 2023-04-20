@@ -1,4 +1,4 @@
-import ContactsList from 'src/components/ContactsList/ContactsList'
+import { ContactsList } from 'src/components/Contacts'
 
 import Head from 'src/components/Head'
 import Layout from 'src/layouts/default'
