@@ -13,7 +13,7 @@ const AddContact = () => {
       onClick={() => addContact.mutate({ data: { createdAt: dayjs().toString() } })}
       startIcon={<AddIcon />}
     >
-      Add new contact
+      Add
     </Button>
   )
 }
