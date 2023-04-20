@@ -11,6 +11,7 @@ const Search = () => {
   return (
     <StyledCard variant="outlined">
       <InputBase
+        autoComplete="off"
         sx={{ ml: 1, flex: 1 }}
         placeholder="Search contacts"
         inputProps={{ 'aria-label': 'search contacts', name: 'search' }}
