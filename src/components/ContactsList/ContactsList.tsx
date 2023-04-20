@@ -1,5 +1,7 @@
 import Grid from '@mui/material/Grid'
-import { Skeleton } from '@mui/material'
+import Alert from '@mui/material/Alert'
+import AlertTitle from '@mui/material/AlertTitle'
+import Skeleton from '@mui/material/Skeleton'
 
 import { DEFAULT_ERROR_MESSAGE } from 'src/utils/consts'
 
@@ -15,7 +17,10 @@ const ContactsList = () => {
       <Search />
 
       {error ? (
-        <>{error?.message || DEFAULT_ERROR_MESSAGE}</>
+        <Alert severity="error">
+          <AlertTitle>Error</AlertTitle>
+          {error?.message || DEFAULT_ERROR_MESSAGE}
+        </Alert>
       ) : (
         <Grid container spacing={2}>
           {isLoading
