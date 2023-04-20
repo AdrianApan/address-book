@@ -51,7 +51,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #ffffff;
+  background: #fafafa;
 }
 
 a {

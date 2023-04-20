@@ -50,7 +50,7 @@ const ContactCard = ({ details }: { details: Contact }) => {
 
   return (
     <>
-      <Card variant="outlined" sx={{ padding: 2 }}>
+      <Card variant="outlined">
         <CardContent sx={{ pr: 2 }}>
           <CardHeader>
             <StyledAvatar alt={name} src={avatar} />
