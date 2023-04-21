@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "name": "John Doe",
+    "email": "john.doe@foobar.com",
+    "avatar": "https://i.pravatar.cc/100",
+    "birthday": "2022-06-30T19:16:41.824Z",
+    "phone": "",
+    "createdAt": "Thu, 20 Apr 2023 18:30:45 GMT"
+  },
+  {
+    "id": "2",
+    "name": "Jane Doe",
+    "email": "jane.doe@foobar.com",
+    "avatar": "https://i.pravatar.cc/200",
+    "birthday": "2022-06-30T19:16:41.824Z",
+    "phone": "555444333",
+    "createdAt": "Thu, 20 Apr 2023 18:30:45 GMT"
+  },
+  {
+    "id": "3",
+    "name": "Foo Bar",
+    "email": "foo.bar@foobar.com",
+    "avatar": "https://i.pravatar.cc/300",
+    "birthday": "",
+    "phone": "",
+    "createdAt": "Thu, 20 Apr 2023 18:30:45 GMT"
+  },
+  {
+    "id": "4",
+    "name": "Oof Rab",
+    "email": "oof.rab@foobar.com",
+    "avatar": "https://i.pravatar.cc/400",
+    "birthday": "2022-06-30T19:16:41.824Z",
+    "phone": "123456789",
+    "createdAt": "Thu, 20 Apr 2023 18:30:45 GMT"
+  }
+]
