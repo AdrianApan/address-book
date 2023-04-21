@@ -42,6 +42,17 @@ yarn dev
 pnpm dev
 ```
 
+### Running the tests:
+
+```bash
+# Unit tests
+npm run test
+# E2E tests
+npm run build
+npm run start
+npm run cypress
+```
+
 ### Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
 ## 🗺️ Roadmap
@@ -51,4 +62,4 @@ pnpm dev
 - Add validation to the edit contact details form
 - Add phone number and date input types to the edit contact details form
 - Allow user avatar uploads
-- Add visual cues in the UI when adding, updating and deleting a contact.
+- Add visual cues in the grid UI when adding, updating and deleting a contact.
