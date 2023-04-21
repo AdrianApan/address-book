@@ -74,6 +74,7 @@ const ContactCard = ({ details }: { details: Contact }) => {
             <Delete />
           </IconButton>
           <ExpandMore
+            data-testid="collapse"
             expand={expanded}
             onClick={handleExpandClick}
             aria-expanded={expanded}
